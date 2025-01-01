@@ -3,19 +3,20 @@ document.addEventListener('DOMContentLoaded', function() {
     passwordInput: document.getElementById('input'),
     passwordInputValue: '',
     passwordfunc: function() {
-      this.passwordInputValue = this.passwordInput.value.trim();
+      this.passwordInputValue = this.passwordInput.value.trim().toLowerCase();
 
-      if (this.passwordInputValue === 'Password') {
+      if (this.passwordInputValue === 'password') {
         document.getElementById('p').textContent = 'Password Is Incorrect';
         this.passwordInput.value = '';
-      } else if (this.passwordInputValue === 'Incorrect') {
+      } else if (this.passwordInputValue === 'incorrect') {
         document.getElementById('p').textContent = 'Please Try Again';
         this.passwordInput.value = '';
-      } else if (this.passwordInputValue === 'Again') {
+      } else if (this.passwordInputValue === 'again') {
         document.getElementById('p').textContent = 'Please Try Again Later';
         this.passwordInput.value = '';
-      } else if (this.passwordInputValue === 'Again Later') {
+      } else if (this.passwordInputValue === 'again later') {
         toggleFullscreen(image);
+        this.passwordInput.value = '';
       } 
     }
   };
